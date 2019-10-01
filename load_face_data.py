@@ -3,10 +3,10 @@ import numpy as np
 capture=cv2.VideoCapture(0)
 cascade=cv2.CascadeClassifier('FaceFront.xml')
 font=cv2.FONT_HERSHEY_COMPLEX
-name1=np.load('Kanishk.npy',allow_pickle=True).reshape(101,50*50*3)
-name2=np.load('Parth.npy', allow_pickle=True).reshape(101,50*50*3)
+name1=np.load('Face1.npy',allow_pickle=True).reshape(101,50*50*3)   #face data of person_1
+name2=np.load('Face2.npy', allow_pickle=True).reshape(101,50*50*3)   #face data for person_2
 data=np.concatenate([name1,name2])
-users={'0':'Kanishk','1':'Parth'}
+users={'0':'Person_1','1':'Person_2'}
 labels=np.zeros((202,1))
 labels[:101]=0.0
 labels[100:]=1.0
